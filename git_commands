@@ -1,0 +1,116 @@
+Checking out a new branch
+create a folder under D:\Dover\adp172_PR
+
+1. Cloning main branch  "Dover_AEM_develop"
+git clone <https://DBS-Devops@dev.azure.com/DBS-Devops/dds-dover-cms/_git/dds-dover-cms>
+
+2.cd dds-dover-cms
+
+3.git status
+
+4.git branch -a
+
+  remotes/origin/Dover_AEM_Main
+  remotes/origin/Dover_AEM_develop
+  remotes/origin/Dover_AEM_develop-revert-from-destaco_feature_ADP-95
+  remotes/origin/Feature/ADP-167-Product-filter-POC
+  remotes/origin/Feature/ADP_Test
+  remotes/origin/Feature/destaco_ADP_158
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/aem-sandbox-dev
+  remotes/origin/destaco_feature_ADP-95
+
+
+5.git checkout feature/ADP-95
+
+=============================================================================
+
+Creating a feature branch.
+
+create a folder under D:\Dover\adp172_PR
+
+1. Cloning main branch  "Dover_AEM_develop"
+git clone https://DBS-Devops@dev.azure.com/DBS-Devops/dds-dover-cms/_git/dds-dover-cms
+
+2.cd dds-dover-cms
+
+3.git status
+
+
+4.	Go to Azure Git URL (https://dev.azure.com/DBS-Devops/dds-dover-cms/_git/dds-dover-cms/branches?_a=all)
+
+5.	Click on Branches in left side menu and click on “New Branch” as highlited in the screen shot.
+
+6.	Give the Name of the feature branch based on user story like “feature/<userstorynumber>-<name of userstory>” and based on “Destaco_AEM_develop” branch and click on create.
+
+7.in dds-dover-cms> git pull
+
+8.git checkout feature/ADP-95
+
+9.git status
+
+10. Sometimes not necessary    git pull origin feature/ADP-1093
+      then               git push --set-upstream origin feature/ADP-1093  
+
+========================================================
+
+Adding  a single file 
+
+git status
+
+1. git add  ui.apps/src/main/content/jcr_root/apps/dover/components/content/structure/cdsconfigurator/_cq_dialog/.content.xml
+
+2. git status
+
+3. git commit -m "Renamed dialog title"
+
+4.git pull
+
+5.git push
+
+6.git status
+
+
+Create pull request against  "develop_destaco"
+
+
+During downmerging from develop_destaco
+
+We do 
+
+git pull
+git rebase
+
+
+Testing whether able to connect to remote source
+ssh -T git@github.com
+
+If access denied occurs , no permissions we have generate public and private keys on our local machine and
+configure the Public key in our GITHub account in order to establish communication and check-in code successfully.
+----------------------------------------------------------------------------------------------------------------
+Generating public and private key in user home directory  (Use your  GITHub email address to generate the public and private key) 
+C:\Users\brahmaji.vadamodula\.ssh>ssh-keygen -o -t rsa -C "madhaveeswara.cse@gmail.com"
+press enter for default file location (C:\Users\brahmaji.vadamodula\.ssh)
+press enter for paraphrase and again enter for confirming paraphrase
+-------------------------------------------------------------------------------
+Now add the public key from "id_rsa" microsoft publisher file into your GITHub account 
+Goto settings> SSH and GPG keys.
+Add it to GITHub public key in SSH tab in SSH> Add new public key.
+
+
+Reference site  https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Windows-Example
+-------------------------------------------------------------------------------------------------------------------------
+Now open a new command prompt in respective source code folder and run the following commands.
+git add .
+git commit -m "First Commit"
+Add a remote
+git remote add origin git@github.com:Madhav-CSE536/Cooking-With-React.git
+Push changes to master branch
+git push -u origin master
+
+
+
+
+
+
+
